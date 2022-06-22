@@ -1,7 +1,7 @@
 import DiaryItem from "./DiaryItem"
 
 const DiaryList = ({ diaryList }) => {
-    console.log(diaryList)
+    // console.log(diaryList)
     return (
         <div className="DiaryList">
             <h2>다이어리 목록</h2>
