@@ -1,6 +1,6 @@
-import DiaryEditor from './DiaryEditor';
-import DiaryList from './DiaryList';
-import './App.css';
+import DiaryEditor from './DiaryEditor'
+import DiaryList from './DiaryList'
+import './App.css'
 
 const dummyList = [
   {
@@ -30,9 +30,9 @@ function App() {
   return (
     <div className="App">
       <DiaryEditor/>
-      <DiaryList diaryList={undefined}/>
+      <DiaryList diaryList={dummyList}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
