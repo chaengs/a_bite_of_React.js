@@ -1,6 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
+import { DiaryDispatchContext } from "./App";
 
-const DiaryEditor = ({onCreate}) => {
+const DiaryEditor = () => {
+    const {onCreate} = useContext(DiaryDispatchContext) //{onCreate}인 이유 : Provider로 받을 땐 {} 비구조화할당으로 받아야함
+
     const [state, setState] = useState({
         author: "",
         content: "",
@@ -11,9 +14,6 @@ const DiaryEditor = ({onCreate}) => {
     const contentInput = useRef();
 
     const handleChangeState = (e) => {
-        // console.log(e.target.name)
-        // console.log(e.target.value)
-
         setState({
             ...state,
             [e.target.name] : e.target.value,
