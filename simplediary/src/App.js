@@ -44,16 +44,15 @@ const App = () => {
   },[])
 
   //일기 삭제
-  const onRemove = (targetId) => {
-    const newDiaryList = data.filter((it) => it.id !== targetId)
-    setData(newDiaryList)
-  }
+  const onRemove = useCallback((targetId) => {
+    setData((data) => data.filter((it) => it.id !== targetId))
+  },[])
   //일기 수정
-  const onEdit = (targetId, newContent) => {
-    setData(
+  const onEdit = useCallback((targetId, newContent) => {
+    setData((data) =>
       data.map((it) => it.id === targetId ? {...it, content: newContent} : it)
     )
-  }
+  },[])
   
   //감정점수 통계
   const getDiaryAnalysis = useMemo(() => {
